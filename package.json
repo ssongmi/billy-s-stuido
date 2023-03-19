@@ -15,7 +15,8 @@
     "react-scripts": "5.0.1",
     "react-simple-splitter": "^1.0.7",
     "styled-components": "^5.3.9",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "react-cookie": "^4.1.1"
   },
   "scripts": {
     "start": "set PORT=3001 && react-scripts start",
@@ -31,17 +32,7 @@
     ],
     "plugins": [
       "import"
-    ],
-    "rules": {
-      "react/jsx-filename-extension": 0,
-      "no-unused-vars": 1,
-      "react/button-has-type": "off",
-      "react/react-in-jsx-scope": "off",
-      "import/order": [
-        "error",
-        {}
-      ]
-    }
+    ]
   },
   "browserslist": {
     "production": [

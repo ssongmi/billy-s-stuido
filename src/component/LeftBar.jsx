@@ -1,13 +1,13 @@
 import { useEffect } from 'react';
-import data from "../data/KeywordType.json";
+import data from '../data/KeywordType.json';
 import Button from './Button';
 
 export default function LeftBar() {
-  return(
+  return (
     <div className="left-bar-container">
       <div className="left-bar-wrap">
         {
-          data.types.map((item) =>
+          data.types.map((item) => (
             <div className={`btn-container ${item.active ? 'active' : 'inactive'}`}>
               <Button
                 key={item.type}
@@ -15,7 +15,7 @@ export default function LeftBar() {
                 className="small-icon-btn"
               />
             </div>
-          )
+          ))
         }
       </div>
     </div>

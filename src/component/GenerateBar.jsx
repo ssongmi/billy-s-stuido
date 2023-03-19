@@ -2,13 +2,13 @@ import { useCallback, useRef, useState } from 'react';
 import Button from './Button';
 
 export default function GenerateBar () {
-  const [mode, setMode] = useState("image");
+  const [mode, setMode] = useState('image');
   const [image, setImage] = useState(null);
 
   const fileRef = useRef();
 
   const handleClickUpload = useCallback(() => {
-    if(fileRef) {
+    if (fileRef) {
       fileRef.current.click();
     }
   }, [fileRef]);
@@ -30,27 +30,29 @@ export default function GenerateBar () {
           </Button>
         </div>
 
-        { mode === 'image' ? <div className="group-container">
-          <div className="group-title">
-            <div className="group-main-title">Image</div>
-            <div className="group-description">
-              Upload or draw an image to use as inspiration.
+        { mode === 'image' ? (
+          <div className="group-container">
+            <div className="group-title">
+              <div className="group-main-title">Image</div>
+              <div className="group-description">
+                Upload or draw an image to use as inspiration.
+              </div>
+            </div>
+            <div className="contents-container image-upload-container">
+              <input
+                className="image-fake-input"
+                onClick={handleClickUpload}
+                readOnly
+              />
+              <input
+                ref={fileRef}
+                type="file"
+                accept="image/jpg,image/png,image/jpeg,image/gif"
+                onChange={handleImageChange}
+              />
             </div>
           </div>
-          <div className="contents-container image-upload-container">
-            <input
-              className="image-fake-input"
-              onClick={handleClickUpload}
-              readOnly
-            />
-            <input
-              ref={fileRef}
-              type="file"
-              accept="image/jpg,image/png,image/jpeg,image/gif"
-              onChange={handleImageChange}
-            />
-          </div>
-        </div> : '' }
+        ) : '' }
       </div>
       <div className="group-container prompt-container">
         <div className="group-title">

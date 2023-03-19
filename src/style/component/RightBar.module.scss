@@ -1,0 +1,75 @@
+@import 'src/style/variable';
+
+.right-bar-container {
+  width: 400px;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 32px;
+  .filter-container {
+    margin-top: 0;
+  }
+  .filter-btn-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content: space-between;
+    row-gap: 12px;
+
+    .filter-btn-wrap {
+      cursor:pointer;
+      position: relative;
+      border-radius: 10px;
+      .filter-btn-hover {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        border-radius: inherit;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        color: transparent;
+        font-size: 0.9rem;
+      }
+
+      &:hover {
+        .filter-btn-hover {
+          background-color: $font-green;
+          opacity: 0.9;
+          color: white;
+          transition: 0.2s;
+        }
+        .filter-btn {
+          color: white;
+        }
+      }
+    }
+  }
+
+  .album-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 14px;
+    .picture-container {
+      width: 110px;
+      height: 110px;
+      overflow: hidden;
+      img {
+        width: inherit;
+      }
+    }
+    .picture-add-btn {
+      background-repeat: no-repeat;
+      background-position: center center;
+
+      &:hover {
+        background-image: url("../../../public/icon/icon_add_active.svg") ;
+      }
+    }
+  }
+}

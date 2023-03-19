@@ -3,14 +3,14 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 const StyledButton = styled.button`
-  background-image: ${({ icon }) => `url(${process.env.PUBLIC_URL}/icon/${icon}.svg)`}
+  background-image: ${({ icon }) => `url(${process.env.PUBLIC_URL}/icon/${icon})`}
 `;
 export default function Button({
   children,
   type = 'button',
   handleClick,
   icon,
-  className
+  className,
 }) {
   return (
     <StyledButton
@@ -29,7 +29,7 @@ Button.propTypes = {
   handleClick: PropTypes.func,
   children: PropTypes.node,
   icon: PropTypes.string,
-  className: PropTypes.string
+  className: PropTypes.string,
 };
 
 Button.defaultProps = {
@@ -38,5 +38,5 @@ Button.defaultProps = {
   children: '',
   type: 'button',
   icon: null,
-  className: ''
+  className: '',
 };

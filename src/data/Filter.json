@@ -1,0 +1,23 @@
+{
+  "filters": [
+    {
+      "type": "Fairytale",
+      "img": "fairytale.png"
+    }, {
+      "type": "Gogh",
+      "img": "gogh.png"
+    }, {
+      "type": "OilPaint",
+      "img": "oilPaint.png"
+    }, {
+      "type": "Watercolor",
+      "img": "watercolor.png"
+    }, {
+      "type": "PopArt",
+      "img": "popArt.png"
+    }, {
+      "type": "PixelArt",
+      "img": "pixelArt.png"
+    }
+  ]
+}

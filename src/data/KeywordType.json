@@ -2,19 +2,19 @@
   "types": [
     {
       "type": "family",
-      "icon": "icon_people",
+      "icon": "icon_people.svg",
       "active": true
     }, {
       "type": "nature",
-      "icon": "icon_nature",
+      "icon": "icon_nature.svg",
       "active": false
     }, {
       "type": "objects",
-      "icon": "icon_objects",
+      "icon": "icon_objects.svg",
       "active": false
     }, {
       "type": "animal",
-      "icon": "icon_animal",
+      "icon": "icon_animal.svg",
       "active": false
     }
   ]
