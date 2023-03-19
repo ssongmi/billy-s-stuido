@@ -1,3 +1,7 @@
+import LeftBar from '../component/LeftBar';
+
 export default function Index() {
-  return (<div>dd</div>);
+  return (
+    <LeftBar />
+  );
 }

@@ -1,5 +1,12 @@
 html {
   font-family: 'Inter', sans-serif;
+  width: 100%;
+  height: 100%;
+}
+
+body, #root {
+  width: 100%;
+  height: 100%;
 }
 
 ::-webkit-scrollbar {
@@ -14,3 +21,5 @@ html {
   border-radius: 6px;
 }
 
+@import "src/style/component/LeftBar.module";
+@import "src/style/component/Button.module";

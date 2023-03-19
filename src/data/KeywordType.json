@@ -1,0 +1,21 @@
+{
+  "types": [
+    {
+      "type": "family",
+      "icon": "icon_people",
+      "active": true
+    }, {
+      "type": "nature",
+      "icon": "icon_nature",
+      "active": false
+    }, {
+      "type": "objects",
+      "icon": "icon_objects",
+      "active": false
+    }, {
+      "type": "animal",
+      "icon": "icon_animal",
+      "active": false
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+@import "src/style/variable";
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.small-icon-btn {
+  width: 36px;
+  height: 36px;
+  display: block;
+  padding: 8px 4px;
+  background-size: 28px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.small-icon-btn.active {
+
+}
