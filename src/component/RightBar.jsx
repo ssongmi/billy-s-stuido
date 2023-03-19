@@ -33,7 +33,7 @@ export default function RightBar () {
           <div className="group-main-title">Album</div>
           <div className="group-description">Let&rsquo;s save your picture</div>
         </div>
-        <div className="contents-container album-container">
+        <div className="contents-container album-btn-container">
           {
             album?.map((picture) => (
               <div className="picture-container">

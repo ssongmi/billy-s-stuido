@@ -44,8 +44,25 @@ input {
   border-radius: 6px;
 }
 
+.split {
+  display: flex;
+  flex-direction: row;
+}
+
+.gutter {
+  background-color: #eee;
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+
+.gutter.gutter-horizontal {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==');
+  cursor: col-resize;
+}
+
 @import "src/style/component/LeftBar.module";
 @import "src/style/component/RightBar.module";
 @import "src/style/component/Group.module";
 @import "src/style/component/Button.module";
+@import "src/style/component/Main.module";
 @import "src/style/component/GenerateBar.module";

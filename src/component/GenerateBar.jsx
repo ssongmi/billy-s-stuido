@@ -15,18 +15,24 @@ export default function GenerateBar () {
     }
   }, [fileRef]);
 
+  const handleModeBtnClick = useCallback((newMode) => {
+    setMode(newMode);
+  }, []);
+
   const handleImageChange = useCallback(() => {}, []);
   return (
     <div className="generate-bar-container">
       <div className="image-container">
-        <div className="type-btn-container">
+        <div className="mode-btn-container">
           <Button
-            className={mode === 'image' ? 'type-btn active' : 'type-btn'}
+            className={mode === 'image' ? 'mode-btn active' : 'mode-btn'}
+            handleClick={() => handleModeBtnClick('image')}
           >
             IMAGE TO IMAGE
           </Button>
           <Button
-            className={mode === 'text' ? 'type-btn active' : 'type-btn'}
+            className={mode === 'text' ? 'mode-btn active' : 'mode-btn'}
+            handleClick={() => handleModeBtnClick('text')}
           >
             TEXT TO IMAGE
           </Button>

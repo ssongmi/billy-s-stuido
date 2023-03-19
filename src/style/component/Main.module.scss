@@ -1,0 +1,29 @@
+@import 'src/style/variable';
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  column-gap: 10px;
+  flex: auto;
+  padding: 32px;
+  align-items: center;
+
+  .main-picture-container {
+    max-height: calc(50% - 20px);
+    max-width: 100%;
+    width: fit-content;
+    height: fit-content;
+    border: 1px solid $font-black;
+
+    &:first-child {
+      margin-bottom: 40px;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+
+}

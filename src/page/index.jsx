@@ -1,20 +1,19 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
-import Splitter from 'react-simple-splitter';
+import Split from 'react-split';
 import LeftBar from '../component/LeftBar';
 import GenerateBar from '../component/GenerateBar';
 import RightBar from '../component/RightBar';
+import Main from '../component/Main';
 
-const option1 = {
-  mode: 'h',
-  minSize: 300,
-  oneSize: 300,
-};
 export default function Index() {
   return (
     <>
       <LeftBar />
-      <GenerateBar />
-      <RightBar />
+      <Split className="split">
+        <GenerateBar />
+        <Main />
+        <RightBar />
+      </Split>
     </>
   );
 }
