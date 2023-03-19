@@ -2,7 +2,7 @@
 
 .left-bar-container {
   width: 60px;
-  box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.1);
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
   height: 100%;
   display: flex;
   align-items: center;
@@ -29,7 +29,7 @@
           position: absolute;
           right: -2px;
           height: 24px;
-          background-color: $dark-grin;
+          background-color: $dark-green;
           top: 50%;
           transform: translateY(-50%);
         }

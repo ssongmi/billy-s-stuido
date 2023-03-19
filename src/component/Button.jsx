@@ -17,7 +17,7 @@ export default function Button({
       onClick={handleClick}
       type={type}
       icon={icon}
-      className={className}
+      className={`btn ${className}`}
     >
       {children}
     </StyledButton>
