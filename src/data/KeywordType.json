@@ -2,20 +2,27 @@
   "types": [
     {
       "type": "family",
+      "iconName": "icon_people",
       "icon": "icon_people.svg",
       "active": true
     }, {
       "type": "nature",
+      "iconName": "icon_nature",
       "icon": "icon_nature.svg",
       "active": false
     }, {
       "type": "objects",
+      "iconName": "icon_objects",
       "icon": "icon_objects.svg",
       "active": false
     }, {
       "type": "animal",
+      "iconName": "icon_animal",
       "icon": "icon_animal.svg",
       "active": false
     }
-  ]
+  ],
+  "keywords": {
+    "family": ["Mother", "Father", "Sister", "Brother", "Grandmother", "Grandfather", "Uncle", "Aunt"]
+  }
 }

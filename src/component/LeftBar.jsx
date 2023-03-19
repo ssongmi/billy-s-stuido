@@ -11,7 +11,7 @@ export default function LeftBar() {
             <div className={`btn-container ${item.active ? 'active' : 'inactive'}`}>
               <Button
                 key={item.type}
-                icon={item.active ? `${item.icon}_active` : item.icon}
+                icon={item.active ? `${item.iconName}_active.svg` : item.icon}
                 className="small-icon-btn"
               />
             </div>
