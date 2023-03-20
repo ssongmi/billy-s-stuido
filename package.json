@@ -1,4 +1,5 @@
 {
+  "homepage": "https://ssongmi.github.io/billy-s-stuido/",
   "name": "billy_studio",
   "version": "0.1.0",
   "private": true,
@@ -19,11 +20,15 @@
     "styled-components": "^5.3.9",
     "web-vitals": "^2.1.4"
   },
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
+  },
   "scripts": {
     "start": "set PORT=3001 && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [

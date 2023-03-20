@@ -8,7 +8,6 @@ export default function GenerateBar () {
   const [image, setImage] = useState(null);
 
   const fileRef = useRef();
-
   const handleClickUpload = useCallback(() => {
     if (fileRef) {
       fileRef.current.click();
