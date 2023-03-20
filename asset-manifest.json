@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/billy-s-stuido/static/css/main.f598c34c.css",
-    "main.js": "/billy-s-stuido/static/js/main.c0fa4e15.js",
+    "main.js": "/billy-s-stuido/static/js/main.851925ba.js",
     "static/js/787.9fbf2ed0.chunk.js": "/billy-s-stuido/static/js/787.9fbf2ed0.chunk.js",
     "index.html": "/billy-s-stuido/index.html",
     "static/media/icon_add_active.svg": "/billy-s-stuido/static/media/icon_add_active.60f0f21e6cf1865072e9.svg",
     "main.f598c34c.css.map": "/billy-s-stuido/static/css/main.f598c34c.css.map",
-    "main.c0fa4e15.js.map": "/billy-s-stuido/static/js/main.c0fa4e15.js.map",
+    "main.851925ba.js.map": "/billy-s-stuido/static/js/main.851925ba.js.map",
     "787.9fbf2ed0.chunk.js.map": "/billy-s-stuido/static/js/787.9fbf2ed0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f598c34c.css",
-    "static/js/main.c0fa4e15.js"
+    "static/js/main.851925ba.js"
   ]
 }
