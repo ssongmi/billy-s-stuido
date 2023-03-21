@@ -6,6 +6,11 @@
   height: 100%;
   display: flex;
   align-items: center;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
 
   .left-bar-wrap {
     display: flex;

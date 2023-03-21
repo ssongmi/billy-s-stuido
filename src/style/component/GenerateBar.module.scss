@@ -7,7 +7,11 @@
   height: 100%;
   border-right: 1px solid rgba(0, 0, 0, 0.1);
   padding: 32px;
+  overflow: auto;
 
+  &::-webkit-scrollbar {
+    width: 0
+  }
   .image-container {
     .mode-btn-container {
       padding: 6px;

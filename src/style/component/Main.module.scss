@@ -7,6 +7,11 @@
   flex: auto;
   padding: 32px;
   align-items: center;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
 
   .main-picture-container {
     max-height: calc(50% - 20px);
