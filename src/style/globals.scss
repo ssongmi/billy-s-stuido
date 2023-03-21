@@ -32,6 +32,14 @@ input {
   }
 }
 
+textarea {
+  border: none;
+  font-family: inherit;
+  font-size: 0.9rem;
+  padding: 12px;
+  resize: none;
+}
+
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;

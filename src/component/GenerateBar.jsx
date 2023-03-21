@@ -1,11 +1,16 @@
+import { useRecoilValue } from 'recoil';
 import { useCallback, useRef, useState } from 'react';
 import data from '../data/KeywordType.json';
 import Button from './Button';
+import KeyType from '../atom/KeyType';
 
 export default function GenerateBar () {
   const [mode, setMode] = useState('image');
   const [type, setType] = useState('family');
   const [image, setImage] = useState(null);
+  const [prompt, setPrompt] = useState('');
+
+  const keyType = useRecoilValue(KeyType);
 
   const fileRef = useRef();
   const handleClickUpload = useCallback(() => {
@@ -19,6 +24,10 @@ export default function GenerateBar () {
   }, []);
 
   const handleImageChange = useCallback(() => {}, []);
+
+  const handleWordClick = useCallback((newWord) => {
+    setPrompt((prevPrompt) => `${prevPrompt}${prevPrompt.length === 0 ? '' : ', '} ${newWord}`);
+  }, []);
   return (
     <div className="generate-bar-container">
       <div className="image-container">
@@ -70,10 +79,11 @@ export default function GenerateBar () {
         </div>
         <div className="keyword-container">
           {
-            data.keywords[type]?.map((keyword) => (
+            data.keywords[keyType]?.map((keyword) => (
               <Button
                 className="oval-btn keyword-btn"
                 icon="icon_add_active.svg"
+                handleClick={() => handleWordClick(keyword)}
               >
                 {keyword}
               </Button>
@@ -81,8 +91,11 @@ export default function GenerateBar () {
           }
         </div>
         <div className="contents-container">
-          <input
+          <textarea
             className="prompt-input"
+            value={prompt}
+            onChange={(e) => setPrompt(e.target.value)}
+
           />
         </div>
       </div>

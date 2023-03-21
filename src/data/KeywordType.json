@@ -3,26 +3,69 @@
     {
       "type": "family",
       "iconName": "icon_people",
-      "icon": "icon_people.svg",
-      "active": true
-    }, {
+      "icon": "icon_people.svg"
+    },
+    {
       "type": "nature",
       "iconName": "icon_nature",
-      "icon": "icon_nature.svg",
-      "active": false
-    }, {
+      "icon": "icon_nature.svg"
+    },
+    {
       "type": "objects",
       "iconName": "icon_objects",
-      "icon": "icon_objects.svg",
-      "active": false
-    }, {
+      "icon": "icon_objects.svg"
+    },
+    {
       "type": "animal",
       "iconName": "icon_animal",
-      "icon": "icon_animal.svg",
-      "active": false
+      "icon": "icon_animal.svg"
     }
   ],
   "keywords": {
-    "family": ["Mother", "Father", "Sister", "Brother", "Grandmother", "Grandfather", "Uncle", "Aunt"]
+    "family": [
+      "Mother",
+      "Father",
+      "Sister",
+      "Brother",
+      "Grandmother",
+      "Grandfather",
+      "Uncle",
+      "Aunt"
+    ],
+    "nature": [
+      "Forest",
+      "Ocean",
+      "Mountain",
+      "River",
+      "Desert",
+      "Sky",
+      "Beach",
+      "Sunset",
+      "Waterfall"
+    ],
+    "objects": [
+      "Chair",
+      "Table",
+      "Lamp",
+      "Phone",
+      "Computer",
+      "Book",
+      "Pen",
+      "TV",
+      "Sofa",
+      "Pillow"
+    ],
+    "animal": [
+      "Dog",
+      "Cat",
+      "Bird",
+      "Fish",
+      "Elephant",
+      "Lion",
+      "Tiger",
+      "Bear",
+      "Monkey",
+      "Snake"
+    ]
   }
 }
