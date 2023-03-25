@@ -1,16 +1,20 @@
-import { useRecoilValue } from 'recoil';
+import { useRecoilState, useRecoilValue } from 'recoil';
 import { useCallback, useRef, useState } from 'react';
 import data from '../data/KeywordType.json';
 import Button from './Button';
 import KeyType from '../atom/KeyType';
+import Picture from '../atom/Picture';
+import useImage from '../hook/useImage';
 
 export default function GenerateBar () {
+  const [picture, setPicture] = useRecoilState(Picture);
   const [mode, setMode] = useState('image');
   const [type, setType] = useState('family');
   const [image, setImage] = useState(null);
   const [prompt, setPrompt] = useState('');
 
   const keyType = useRecoilValue(KeyType);
+  const { convertToBase64 } = useImage();
 
   const fileRef = useRef();
   const handleClickUpload = useCallback(() => {
@@ -23,7 +27,13 @@ export default function GenerateBar () {
     setMode(newMode);
   }, []);
 
-  const handleImageChange = useCallback(() => {}, []);
+  const handleImageChange = useCallback((evt) => {
+    setPicture(evt.target.files[0]);
+  }, []);
+
+  const handleGenerateClick = useCallback(async () => {
+    const base64Picture = await convertToBase64(picture);
+  }, [picture]);
 
   const handleWordClick = useCallback((newWord) => {
     setPrompt((prevPrompt) => `${prevPrompt}${prevPrompt.length === 0 ? '' : ', '} ${newWord}`);
@@ -100,7 +110,12 @@ export default function GenerateBar () {
         </div>
       </div>
       <div className="generate-btn-container">
-        <Button className="generate-btn dark-green-btn">GENERATE</Button>
+        <Button
+          className="generate-btn dark-green-btn"
+          handleClick={handleGenerateClick}
+        >
+          GENERATE
+        </Button>
       </div>
     </div>
   );

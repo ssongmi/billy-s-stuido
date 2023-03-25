@@ -2,12 +2,12 @@
   "homepage": "https://ssongmi.github.io/billy-s-stuido/",
   "name": "billy_studio",
   "version": "0.1.0",
-  "private": true,
   "dependencies": {
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.7.0",
     "eslint-plugin-import": "^2.27.5",
     "node-sass": "^8.0.0",
+    "recoil": "^0.7.7",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-cookie": "^4.1.1",
@@ -21,6 +21,7 @@
     "styled-components": "^5.3.9",
     "web-vitals": "^2.1.4"
   },
+  "private": true,
   "scripts": {
     "start": "set PORT=3001 && react-scripts start",
     "build": "react-scripts build",

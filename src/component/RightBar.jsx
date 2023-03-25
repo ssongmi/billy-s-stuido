@@ -1,9 +1,25 @@
-import { useEffect } from 'react';
+import { useCallback, useEffect, useState } from 'react';
+import { useRecoilValue } from 'recoil';
 import data from '../data/Filter.json';
 import Button from './Button';
+import Picture from '../atom/Picture';
+import useImage from '../hook/useImage';
 
 export default function RightBar () {
-  const album = JSON.parse(localStorage.getItem('album'));
+  const [album, setAlbum] = useState(JSON.parse(localStorage.getItem('album')));
+  const picture = useRecoilValue(Picture);
+  const { convertToBase64 } = useImage();
+  const handleAddClick = useCallback(async () => {
+    const originAlbum = JSON.parse(localStorage.getItem('album')) || [];
+    if (originAlbum?.length > 6) {
+      originAlbum.pop();
+    }
+    originAlbum.push(await convertToBase64(picture));
+    localStorage.setItem('album', JSON.stringify(originAlbum));
+
+    setAlbum(originAlbum);
+  }, [picture]);
+
   return (
     <div className="right-bar-container">
       <div className="group-container filter-container">
@@ -35,12 +51,12 @@ export default function RightBar () {
         </div>
         <div className="contents-container album-btn-container">
           {
-            album?.map((picture) => (
+            album?.map((pic) => (
               <div className="picture-container">
                 {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
                 <img
                   alt="picture"
-                  src={picture}
+                  src={pic}
                 />
               </div>
             ))
@@ -48,6 +64,7 @@ export default function RightBar () {
           <Button
             className="rect-btn picture-add-btn"
             icon="icon_add.svg"
+            handleClick={handleAddClick}
           />
         </div>
       </div>

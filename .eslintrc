@@ -27,6 +27,13 @@
     ],
     "no-unused-vars": "off",
     "object-curly-newline": "off",
-    "import/no-extraneous-dependencies": ["error", {"devDependencies": false, "optionalDependencies": false, "peerDependencies": false}]
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": ["test/**"],
+        "optionalDependencies": false,
+        "peerDependencies": false
+      }
+    ]
   }
 }
