@@ -3,11 +3,11 @@
   "name": "billy_studio",
   "version": "0.1.0",
   "dependencies": {
+    "axios": "^1.3.4",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.7.0",
     "eslint-plugin-import": "^2.27.5",
     "node-sass": "^8.0.0",
-    "recoil": "^0.7.7",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-cookie": "^4.1.1",

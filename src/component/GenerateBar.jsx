@@ -5,6 +5,7 @@ import Button from './Button';
 import KeyType from '../atom/KeyType';
 import Picture from '../atom/Picture';
 import useImage from '../hook/useImage';
+import { useImage2Image, useText2Image } from '../api/useImage';
 
 export default function GenerateBar () {
   const [picture, setPicture] = useRecoilState(Picture);
@@ -12,6 +13,8 @@ export default function GenerateBar () {
   const [type, setType] = useState('family');
   const [image, setImage] = useState(null);
   const [prompt, setPrompt] = useState('');
+  const { mutate: image2Image } = useImage2Image();
+  const { mutate: text2Image } = useText2Image();
 
   const keyType = useRecoilValue(KeyType);
   const { convertToBase64 } = useImage();
@@ -33,6 +36,12 @@ export default function GenerateBar () {
 
   const handleGenerateClick = useCallback(async () => {
     const base64Picture = await convertToBase64(picture);
+
+    if (mode === 'image') {
+      image2Image({ prompt: base64Picture });
+    } else if (mode === 'text') {
+      text2Image({ prompt: base64Picture });
+    }
   }, [picture]);
 
   const handleWordClick = useCallback((newWord) => {

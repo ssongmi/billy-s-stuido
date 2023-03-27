@@ -1,0 +1,224 @@
+
+$circle-size: 42px;
+.progress-container {
+  z-index: 5000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  .progress-bar-wrap, .progress-percentage-wrap {
+    border-radius: 2px;
+    width: 40%;
+    min-width: 320px;
+    height: 100px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    //box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    .progress-bar-title, .progress-percentage-title {
+      color: #808080;
+      font-weight: bold;
+      font-size: 0.9rem;
+      margin-bottom: 4px;
+    }
+
+    .progress-bar-box {
+      width: 100%;
+      height: 4px;
+      border-radius: 10px;
+      background-color: #eee;
+      position: relative;
+      overflow: hidden;
+
+      .progress-bar-contents {
+        display: block;
+        background-color: white;
+        height: 100%;
+        border-radius: inherit;
+        position: absolute;
+        left: 10px;
+        animation: slidein 1s linear;
+        animation-iteration-count: infinite;
+      }
+    }
+
+    .progress-circle-box {
+      height: $circle-size;
+      width: $circle-size;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      -webkit-animation: circle 4.8s linear infinite;
+      animation: circle 4.8s linear infinite;
+    }
+  }
+
+  .progress-circle-wrap {
+    .progress-circle-contents {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+      height: $circle-size;
+      width: $circle-size;
+      clip: rect(0, $circle-size, $circle-size, $circle-size/2);
+      -webkit-animation: circleContents 1.2s linear infinite;
+      animation: circleContents 1.2s linear infinite;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        height: $circle-size;
+        width: $circle-size;
+        clip: rect(0, $circle-size, $circle-size, $circle-size/2);
+        border: 4px solid white;
+        border-radius: 50%;
+        box-sizing: border-box;
+        -webkit-animation: circleInnerContents 1.2s cubic-bezier(0.770, 0.000, 0.175, 1.000) infinite;
+        animation: circleInnerContents 1.2s cubic-bezier(0.770, 0.000, 0.175, 1.000) infinite;
+      }
+    }
+  }
+
+}
+
+@-webkit-keyframes circle {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes circle {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes circleContents {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(320deg);
+  }
+}
+
+@keyframes circleContents {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(340deg);
+  }
+}
+
+@-webkit-keyframes circleInnerContents {
+  0% {
+    -webkit-transform: rotate(-20deg);
+  }
+  50% {
+    -webkit-transform: rotate(-40deg);
+  }
+  100% {
+    -webkit-transform: rotate(20deg);
+  }
+}
+
+@keyframes circleInnerContents {
+  0% {
+    transform: rotate(-20deg);
+  }
+  50% {
+    transform: rotate(-40deg);
+  }
+  100% {
+    transform: rotate(20deg);
+  }
+}
+
+@keyframes slidein {
+  0% {
+    width: 50px;
+    left: 0;
+  }
+  50% {
+    width: 200px;
+  }
+  100% {
+    width: 50px;
+    left: 100%;
+  }
+}
+
+
+$percentage-bar-height: 1.3rem;
+.progress-container {
+  .progress-percentage-bg {
+    background-color: rgba(14, 42, 71, 0.8);
+    width: 100%;
+    height: 100%;
+  }
+
+  .progress-percentage-title {
+    margin-left: 6px;
+  }
+
+  .progress-percentage-box {
+    width: 100%;
+    height: $percentage-bar-height;
+    border-radius: 10px;
+    background-color: #eee;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+
+    .progress-percentage-contents {
+      height: 100%;
+      background-color: #1673E2;
+      transition: 0.2s;
+      border-radius: inherit;
+    }
+
+    .progress-percentage {
+      position: absolute;
+      display: inline-block;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height:100%;
+      font-size: 1.1rem;
+      line-height: $percentage-bar-height;
+      font-weight: 500;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+    }
+  }
+}

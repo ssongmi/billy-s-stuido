@@ -3,15 +3,27 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import { HashRouter } from 'react-router-dom';
 import { RecoilRoot } from 'recoil';
+import { QueryClient, QueryClientProvider } from 'react-query';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: Infinity,
+      suspense: true,
+      cacheTime: 0,
+    },
+  },
+});
 root.render(
   <HashRouter>
-    <RecoilRoot>
-      <App />
-    </RecoilRoot>
+    <QueryClientProvider client={queryClient}>
+      <RecoilRoot>
+        <App />
+      </RecoilRoot>
+    </QueryClientProvider>
   </HashRouter>,
 );
 
