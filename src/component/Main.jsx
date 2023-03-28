@@ -7,10 +7,10 @@ export default function Main () {
   const picture = useRecoilValue(Picture);
   const generatedPicture = useRecoilValue(GeneratedPicture);
   const pictureURL = useMemo(() => (picture ? URL.createObjectURL(picture) : null), [picture]);
-  const generatedPictureURL = useMemo(
-    () => (generatedPicture ? URL.createObjectURL(generatedPicture) : null),
-    [generatedPicture],
-  );
+  // const generatedPictureURL = useMemo(
+  //   () => (generatedPicture ? URL.createObjectURL(generatedPicture) : null),
+  //   [generatedPicture],
+  // );
   useEffect(() => {
     console.log(pictureURL);
   }, [pictureURL]);
@@ -24,10 +24,10 @@ export default function Main () {
           </div>
         )
         : null}
-      { generatedPictureURL ? (
+      { generatedPicture ? (
         <div className="main-picture-container after-picture">
           {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
-          <img alt="after-picture" src={generatedPictureURL} />
+          <img alt="after-picture" src={`data:image/png;base64,${generatedPicture}`} />
         </div>
       ) : null }
     </div>

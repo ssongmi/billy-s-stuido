@@ -1,24 +1,30 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useRecoilValue } from 'recoil';
+import base64ToBlob from 'base64toblob';
 import data from '../data/Filter.json';
 import Button from './Button';
 import Picture from '../atom/Picture';
 import useImage from '../hook/useImage';
+import GeneratedPicture from '../atom/GeneratedPicture';
 
+const IMAGE_TYPE = 'iVBORw0...ASUVORK5CYII=';
 export default function RightBar () {
   const [album, setAlbum] = useState(JSON.parse(localStorage.getItem('album')));
+
   const picture = useRecoilValue(Picture);
+  const generatedPicture = useRecoilValue(GeneratedPicture);
   const { convertToBase64 } = useImage();
   const handleAddClick = useCallback(async () => {
     const originAlbum = JSON.parse(localStorage.getItem('album')) || [];
     if (originAlbum?.length > 6) {
       originAlbum.pop();
     }
-    originAlbum.push(await convertToBase64(picture));
+    console.log(base64ToBlob(generatedPicture));
+    originAlbum.push(URL.createObjectURL(base64ToBlob(generatedPicture, IMAGE_TYPE)));
     localStorage.setItem('album', JSON.stringify(originAlbum));
 
     setAlbum(originAlbum);
-  }, [picture]);
+  }, [generatedPicture]);
 
   return (
     <div className="right-bar-container">

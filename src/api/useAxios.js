@@ -16,7 +16,7 @@ const AXIOS_DEFAULT_OPTION = {
 const useAxios = ({ config, columns }) => {
   const [loading, setLoading] = useRecoilState(Loading);
   const defaultClient = axios.create(config || AXIOS_DEFAULT_OPTION);
-  defaultClient.defaults.timeout = 10000;
+  defaultClient.defaults.timeout = 100000;
 
   return {
     defaultClient,

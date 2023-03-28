@@ -6,9 +6,11 @@ import KeyType from '../atom/KeyType';
 import Picture from '../atom/Picture';
 import useImage from '../hook/useImage';
 import { useImage2Image, useText2Image } from '../api/useImage';
+import GeneratedPicture from '../atom/GeneratedPicture';
 
 export default function GenerateBar () {
   const [picture, setPicture] = useRecoilState(Picture);
+  const [generatedPicture, setGeneratedPicture] = useRecoilState(GeneratedPicture);
   const [mode, setMode] = useState('image');
   const [type, setType] = useState('family');
   const [image, setImage] = useState(null);
@@ -31,6 +33,7 @@ export default function GenerateBar () {
   }, []);
 
   const handleImageChange = useCallback((evt) => {
+    setGeneratedPicture(null);
     setPicture(evt.target.files[0]);
   }, []);
 
