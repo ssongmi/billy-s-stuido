@@ -8,8 +8,16 @@ const useImage = () => {
     reader.onerror = (error) => reject(error);
   }), []);
 
+  const convertToBlob = (file) => new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      resolve(event.target.result);
+    };
+    reader.readAsDataURL(file);
+  });
   return {
     convertToBase64,
+    convertToBlob,
   };
 };
 

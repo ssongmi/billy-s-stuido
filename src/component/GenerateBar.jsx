@@ -7,7 +7,9 @@ import Picture from '../atom/Picture';
 import useImage from '../hook/useImage';
 import { useImage2Image, useText2Image } from '../api/useImage';
 import GeneratedPicture from '../atom/GeneratedPicture';
+import SnackBarAtom from '../atom/SnackBar';
 
+const MAX_FILE_SIZE = 1024 * 1024;
 export default function GenerateBar () {
   const [picture, setPicture] = useRecoilState(Picture);
   const [generatedPicture, setGeneratedPicture] = useRecoilState(GeneratedPicture);
@@ -17,9 +19,10 @@ export default function GenerateBar () {
   const [prompt, setPrompt] = useState('');
   const { mutate: image2Image } = useImage2Image();
   const { mutate: text2Image } = useText2Image();
+  const [snackbar, setSnackbar] = useRecoilState(SnackBarAtom);
 
   const keyType = useRecoilValue(KeyType);
-  const { convertToBase64 } = useImage();
+  const { convertToBase64, convertToBlob } = useImage();
 
   const fileRef = useRef();
   const handleClickUpload = useCallback(() => {
@@ -33,19 +36,38 @@ export default function GenerateBar () {
   }, []);
 
   const handleImageChange = useCallback((evt) => {
+    const fileSize = evt?.target?.files[0]?.size;
+    console.log(MAX_FILE_SIZE >= fileSize);
+    console.log(`MAX_FILE_SIZE = ${MAX_FILE_SIZE}`);
+    console.log(`fileSize = ${fileSize}`);
+    if (MAX_FILE_SIZE <= fileSize) {
+      setSnackbar({ open: true, msg: '1MB 이하의 사진을 선택해주세요.' });
+      return;
+    }
     setGeneratedPicture(null);
     setPicture(evt.target.files[0]);
   }, []);
 
   const handleGenerateClick = useCallback(async () => {
-    const base64Picture = await convertToBase64(picture);
-
+    // const base64Picture = await convertToBase64(picture);
+    console.log(mode);
     if (mode === 'image') {
-      image2Image({ prompt: base64Picture });
+      // convertToBlob(picture)
+      //   .then((blob) => {
+      //     const formData = new FormData();
+      //     formData.append('image', blob);
+      //     // console.log(blob);
+      //     // image2Image({ blob, prompt });
+      //   });
+      const formData = new FormData();
+      console.log(picture);
+      formData.append('image', picture);
+      // console.log(blob);
+      // image2Image({ formData, prompt });
     } else if (mode === 'text') {
-      text2Image({ prompt: base64Picture });
+      // text2Image({ prompt });
     }
-  }, [picture]);
+  }, [picture, prompt, convertToBlob, mode]);
 
   const handleWordClick = useCallback((newWord) => {
     setPrompt((prevPrompt) => `${prevPrompt}${prevPrompt.length === 0 ? '' : ', '} ${newWord}`);

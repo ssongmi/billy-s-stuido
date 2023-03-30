@@ -8,13 +8,16 @@ import RightBar from '../component/RightBar';
 import MainPage from './MainPage';
 import Progress from '../component/Progress';
 import Start from './Start';
+import Main from '../component/Main';
+import SnackBar from '../component/SnackBar';
 
 export default function Index() {
   const isFetching = useIsFetching();
   const isMutating = useIsMutating();
   return (
     <>
-      <Start />
+      <SnackBar />
+      {/* <Start /> */}
       <div className="backdrop" style={{ zIndex: 9999, display: isFetching > 0 ? 'block' : 'none' }}>
         <Progress mode="circle" open />
       </div>
@@ -22,7 +25,7 @@ export default function Index() {
         <LeftBar />
         <Split className="split">
           <GenerateBar />
-          <MainPage />
+          <Main />
           <RightBar />
         </Split>
       </div>

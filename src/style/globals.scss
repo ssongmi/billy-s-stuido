@@ -16,11 +16,6 @@ body, #root {
 * {
   box-sizing: border-box;
 }
-.main-page {
-  display: flex;
-  flex-direction: row;
-}
-
 
 input {
   border: 0;
@@ -87,3 +82,6 @@ textarea {
 @import "src/style/component/Main.module";
 @import "src/style/component/GenerateBar.module";
 @import "src/style/component/Progress.module";
+@import "src/style/component/SnackBar.module";
+@import "src/style/page/Start.module";
+@import "src/style/page/MainPage.module";

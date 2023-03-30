@@ -2,6 +2,7 @@ import Split from 'react-split';
 import LeftBar from '../component/LeftBar';
 import GenerateBar from '../component/GenerateBar';
 import RightBar from '../component/RightBar';
+import Main from '../component/Main';
 
 export default function MainPage() {
   return (
@@ -9,7 +10,7 @@ export default function MainPage() {
       <LeftBar />
       <Split className="split">
         <GenerateBar />
-        <MainPage />
+        <Main />
         <RightBar />
       </Split>
     </div>
