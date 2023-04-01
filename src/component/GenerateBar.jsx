@@ -49,7 +49,6 @@ export default function GenerateBar () {
     newEvt.target.value = '';
   }, []);
 
-  useTest();
   const queryClient = useQueryClient();
   const handleGenerateClick = useCallback(async () => {
     if (mode === 'image') {
@@ -108,6 +107,8 @@ export default function GenerateBar () {
                 accept="image/jpg,image/png,image/jpeg,image/gif"
                 onChange={handleImageChange}
               />
+              <div />
+              <div />
             </div>
           </div>
         ) : '' }

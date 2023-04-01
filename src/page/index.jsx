@@ -27,7 +27,7 @@ export default function Index() {
       </div>
       <div className="page-container main-page">
         <LeftBar />
-        <Split className="split">
+        <Split className="split" gutterSize={4} sizes={[30, 40, 30]} style={{ width: '100%' }}>
           <GenerateBar />
           <Main />
           <RightBar />
