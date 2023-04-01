@@ -6,11 +6,11 @@ import SnackBarAtom from '../atom/SnackBar';
 export default function SnackBar() {
   const [snackbar, setSnackbar] = useRecoilState(SnackBarAtom);
   useEffect(() => {
-    // setTimeout(() => {
-    //   if (snackbar) {
-    //     setSnackbar({ open: false, msg: '' });
-    //   }
-    // }, 6000);
+    setTimeout(() => {
+      if (snackbar) {
+        setSnackbar({ open: false, msg: '' });
+      }
+    }, 6000);
   }, [snackbar]);
   return (
     <div
