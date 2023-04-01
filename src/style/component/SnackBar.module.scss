@@ -1,10 +1,22 @@
 .snackbar-container {
   position: fixed;
-  width: 300px;
-  height: 50px;
   bottom: 20px;
   right: 20px;
-  background-color: blue;
+  padding: 10px 20px;
   color: white;
-  border-radius: 20px;
+  border-radius: 4px;
+  align-items: center;
+
+  &.snackbar-type-error {
+    background-color: #C1292E;
+  }
+  &.snackbar-type-success {
+    background-color: #72B88D;
+  }
+
+  img {
+    display: inline-block;
+    margin-right: 10px;
+    width: 28px;
+  }
 }
