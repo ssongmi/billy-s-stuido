@@ -11,9 +11,6 @@ export default function Main () {
   //   () => (generatedPicture ? URL.createObjectURL(generatedPicture) : null),
   //   [generatedPicture],
   // );
-  useEffect(() => {
-    console.log(pictureURL);
-  }, [pictureURL]);
   return (
     <div className="main-container">
       { pictureURL
