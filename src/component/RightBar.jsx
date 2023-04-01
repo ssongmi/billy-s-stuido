@@ -19,7 +19,6 @@ export default function RightBar () {
     if (originAlbum?.length > 6) {
       originAlbum.pop();
     }
-    console.log(base64ToBlob(generatedPicture));
     originAlbum.push(URL.createObjectURL(base64ToBlob(generatedPicture, IMAGE_TYPE)));
     localStorage.setItem('album', JSON.stringify(originAlbum));
 

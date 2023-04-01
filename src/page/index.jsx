@@ -2,6 +2,8 @@
 import Split from 'react-split';
 import { Suspense, useEffect } from 'react';
 import { useIsFetching, useIsMutating } from 'react-query';
+import { useRecoilValue } from 'recoil';
+import { useCookies } from 'react-cookie';
 import LeftBar from '../component/LeftBar';
 import GenerateBar from '../component/GenerateBar';
 import RightBar from '../component/RightBar';
@@ -12,13 +14,15 @@ import Main from '../component/Main';
 import SnackBar from '../component/SnackBar';
 
 export default function Index() {
-  const isFetching = useIsFetching();
   const isMutating = useIsMutating();
+  useEffect(() => {
+    localStorage.removeItem('album');
+  }, []);
   return (
     <>
       <SnackBar />
-      {/* <Start /> */}
-      <div className="backdrop" style={{ zIndex: 9999, display: isFetching > 0 ? 'block' : 'none' }}>
+      <Start />
+      <div className="backdrop" style={{ zIndex: 9999, display: isMutating > 0 ? 'block' : 'none' }}>
         <Progress mode="circle" open />
       </div>
       <div className="page-container main-page">

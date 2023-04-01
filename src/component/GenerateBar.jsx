@@ -1,11 +1,12 @@
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { useCallback, useRef, useState } from 'react';
+import { useQueryClient } from 'react-query';
 import data from '../data/KeywordType.json';
 import Button from './Button';
 import KeyType from '../atom/KeyType';
 import Picture from '../atom/Picture';
 import useImage from '../hook/useImage';
-import { useImage2Image, useText2Image } from '../api/useImage';
+import { useImage2Image, useTest, useText2Image } from '../api/useImage';
 import GeneratedPicture from '../atom/GeneratedPicture';
 import SnackBarAtom from '../atom/SnackBar';
 
@@ -36,36 +37,27 @@ export default function GenerateBar () {
   }, []);
 
   const handleImageChange = useCallback((evt) => {
+    const newEvt = evt;
     const fileSize = evt?.target?.files[0]?.size;
-    console.log(MAX_FILE_SIZE >= fileSize);
-    console.log(`MAX_FILE_SIZE = ${MAX_FILE_SIZE}`);
-    console.log(`fileSize = ${fileSize}`);
     if (MAX_FILE_SIZE <= fileSize) {
-      setSnackbar({ open: true, msg: '1MB 이하의 사진을 선택해주세요.' });
+      setSnackbar({ open: true, msg: '1MB 이하의 사진을 선택해주세요.', type: 'error' });
+      newEvt.target.value = '';
       return;
     }
     setGeneratedPicture(null);
     setPicture(evt.target.files[0]);
+    newEvt.target.value = '';
   }, []);
 
+  useTest();
+  const queryClient = useQueryClient();
   const handleGenerateClick = useCallback(async () => {
-    // const base64Picture = await convertToBase64(picture);
-    console.log(mode);
     if (mode === 'image') {
-      // convertToBlob(picture)
-      //   .then((blob) => {
-      //     const formData = new FormData();
-      //     formData.append('image', blob);
-      //     // console.log(blob);
-      //     // image2Image({ blob, prompt });
-      //   });
       const formData = new FormData();
-      console.log(picture);
       formData.append('image', picture);
-      // console.log(blob);
-      // image2Image({ formData, prompt });
+      image2Image({ formData, prompt });
     } else if (mode === 'text') {
-      // text2Image({ prompt });
+      text2Image({ prompt });
     }
   }, [picture, prompt, convertToBlob, mode]);
 
@@ -96,6 +88,12 @@ export default function GenerateBar () {
               <div className="group-main-title">Image</div>
               <div className="group-description">
                 Upload or draw an image to use as inspiration.
+                <br />
+                The size of the picture must be
+                {' '}
+                <b>1MB</b>
+                {' '}
+                or less.
               </div>
             </div>
             <div className="contents-container image-upload-container">
