@@ -1,0 +1,72 @@
+@import "variable";
+
+@media (min-width:320px) and (max-width:768px) {
+  html {
+    width: fit-content;
+  }
+  body, #root {
+    height: unset;
+  }
+  .main-page {
+    flex-direction: column;
+    .left-bar-container {
+      border-bottom: 1px solid $green;
+      width: 100%;
+      .left-bar-wrap {
+        margin: 10px auto;
+        width: 70%;
+        flex-direction: row;
+      }
+    }
+  }
+
+  .split {
+    flex-direction: column;
+  }
+  .generate-bar-container {
+    width: 100% !important;
+    overflow: unset;
+    border-bottom: 1px solid $inactive;
+  }
+
+  .main-container {
+    width: 100% !important;
+    //min-height: 400px;
+    overflow: unset;
+    border-bottom: 1px solid $inactive;
+    .main-picture-container {
+      max-height: unset;
+    }
+  }
+  .right-bar-container {
+    width: 100% !important;
+    max-width: unset;
+
+    .filter-btn-wrap {
+      width: calc(100% / 2 - 12px);
+
+      button::after {
+        content: "";
+        display: block;
+        padding-bottom: 100%;
+      }
+
+      & > button {
+        width: 100%;
+      }
+    }
+  }
+  .round-rect-btn {
+    height: unset;
+  }
+  .picture-add-btn {
+    width: calc(50% - 14px);
+  }
+  .picture-container {
+    width: calc(50% - 14px) !important;
+
+    & > img {
+      width: 100% !important;
+    }
+  }
+}

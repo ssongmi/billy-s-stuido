@@ -9,15 +9,17 @@ import useImage from '../hook/useImage';
 import { useImage2Image, useTest, useText2Image } from '../api/useImage';
 import GeneratedPicture from '../atom/GeneratedPicture';
 import SnackBarAtom from '../atom/SnackBar';
+import Mode from '../atom/Mode';
+import Prompt from '../atom/Prompt';
 
 const MAX_FILE_SIZE = 1024 * 1024;
 export default function GenerateBar () {
   const [picture, setPicture] = useRecoilState(Picture);
   const [generatedPicture, setGeneratedPicture] = useRecoilState(GeneratedPicture);
-  const [mode, setMode] = useState('image');
+  const [mode, setMode] = useRecoilState(Mode);
   const [type, setType] = useState('family');
   const [image, setImage] = useState(null);
-  const [prompt, setPrompt] = useState('');
+  const [prompt, setPrompt] = useRecoilState(Prompt);
   const { mutate: image2Image } = useImage2Image();
   const { mutate: text2Image } = useText2Image();
   const [snackbar, setSnackbar] = useRecoilState(SnackBarAtom);
