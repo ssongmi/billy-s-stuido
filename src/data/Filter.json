@@ -2,22 +2,28 @@
   "filters": [
     {
       "type": "Fairytale",
-      "img": "fairytale.png"
+      "img": "fairytale.png",
+      "suffix": ", fairytale"
     }, {
       "type": "Gogh",
-      "img": "gogh.png"
+      "img": "gogh.png",
+      "suffix": ", gogh"
     }, {
       "type": "OilPaint",
-      "img": "oilPaint.png"
+      "img": "oilPaint.png",
+      "suffix": ", oil paint, Pigment, Glazing"
     }, {
       "type": "Watercolor",
-      "img": "watercolor.png"
+      "img": "watercolor.png",
+      "suffix": ", water color"
     }, {
       "type": "PopArt",
-      "img": "popArt.png"
+      "img": "popArt.png",
+      "suffix": ", pop art"
     }, {
       "type": "PixelArt",
-      "img": "pixelArt.png"
+      "img": "pixelArt.png",
+      "suffix": ", pixel art"
     }
   ]
 }
