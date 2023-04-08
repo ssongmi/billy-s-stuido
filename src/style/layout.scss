@@ -7,6 +7,18 @@
   body, #root {
     height: unset;
   }
+
+  .start-page-img {
+    width: unset !important;
+    height: 100%;
+    margin-left: -530px;
+  }
+  .start-page-title {
+    font-size: 5rem !important;
+    white-space: nowrap;
+  }
+
+
   .main-page {
     flex-direction: column;
     .left-bar-container {
