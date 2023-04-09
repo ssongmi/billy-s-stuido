@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/billy-s-stuido/static/css/main.057402f7.css",
-    "main.js": "/billy-s-stuido/static/js/main.6581ce6c.js",
+    "main.css": "/billy-s-stuido/static/css/main.f4242811.css",
+    "main.js": "/billy-s-stuido/static/js/main.d55126aa.js",
     "static/js/787.9fbf2ed0.chunk.js": "/billy-s-stuido/static/js/787.9fbf2ed0.chunk.js",
     "static/media/BlackHanSans-Regular.ttf": "/billy-s-stuido/static/media/BlackHanSans-Regular.f4f89062321390018f92.ttf",
     "index.html": "/billy-s-stuido/index.html",
     "static/media/icon_add_active.svg": "/billy-s-stuido/static/media/icon_add_active.60f0f21e6cf1865072e9.svg",
-    "main.057402f7.css.map": "/billy-s-stuido/static/css/main.057402f7.css.map",
-    "main.6581ce6c.js.map": "/billy-s-stuido/static/js/main.6581ce6c.js.map",
+    "main.f4242811.css.map": "/billy-s-stuido/static/css/main.f4242811.css.map",
+    "main.d55126aa.js.map": "/billy-s-stuido/static/js/main.d55126aa.js.map",
     "787.9fbf2ed0.chunk.js.map": "/billy-s-stuido/static/js/787.9fbf2ed0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.057402f7.css",
-    "static/js/main.6581ce6c.js"
+    "static/css/main.f4242811.css",
+    "static/js/main.d55126aa.js"
   ]
 }
