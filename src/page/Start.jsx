@@ -24,13 +24,15 @@ export default function Start() {
         <div className="start-page-overlay" />
         {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
         <img className="start-page-img" alt="image" src={`${process.env.PUBLIC_URL}/img/main.png`} />
-        <span className="start-page-title">빌리의 화실</span>
-        <Button
-          handleClick={handleStartClick}
-          className="start-page-btn"
-        >
-          Let&#39;s Start
-        </Button>
+        <div className="start-page-contents-container">
+          <span className="start-page-title">빌리의 화실</span>
+          <Button
+            handleClick={handleStartClick}
+            className="start-page-btn"
+          >
+            Let&#39;s Start
+          </Button>
+        </div>
       </div>
     </div>
   );

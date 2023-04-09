@@ -11,6 +11,15 @@
   backdrop-filter: blur(5px);
   transition: 1s;
 
+  .start-page-contents-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
   .start-page {
     overflow: hidden;
     width: 100%;
@@ -34,10 +43,6 @@
 
     .start-page-title {
       display: block;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
       font-size: 7.4rem;
       font-family: "Black Han Sans", 'Inter', sans-serif;
       color: white;
@@ -46,10 +51,6 @@
 
     .start-page-btn {
       padding: 16px 30px;
-      position: absolute;
-      bottom: 100px;
-      left:50%;
-      transform: translateX(-50%);
       background: linear-gradient(90deg, $dark-green 0%, $green 100%);
       color: white;
       border-radius: 4px;
